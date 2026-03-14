@@ -1,5 +1,4 @@
-**COM5012 Object Oriented Programming - CW1 Smart Library Management System (SLMS) 
-**
+COM5012 Object Oriented Programming - CW1 Smart Library Management System (SLMS) 
 
 A C++ console based application designed to help the local city library manage their workload, with features such as:
 -> Borrowing books
