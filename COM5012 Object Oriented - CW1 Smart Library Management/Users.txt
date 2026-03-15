@@ -1,0 +1,5 @@
+MEMBER
+User "Leon"
+Email leonEmail@gmail.com 
+Password P@ssW0rd 
+Username LCook 

@@ -3,5 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="COM5012 Object Oriented - CW1 Smart Library Management.vcxproj" Id="97d339aa-6e44-462d-bb45-7353344b9836" />
+  <Project Path="COM5012 Object Oriented - CW1 Smart Library Management.vcxproj" Id="97d339aa-6e44-462d-bb45-7353344b9836">
+    <BuildType Solution="Debug|x64" Project="Release" />
+  </Project>
 </Solution>
