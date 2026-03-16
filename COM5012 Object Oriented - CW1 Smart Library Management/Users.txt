@@ -39,3 +39,26 @@ RecordID:3
 Availible:False
 EndReservationRecord
 EndMember
+Admin
+User:Gabriel
+Email: Gabe@gmail.com
+Password: ValveCEO
+Username: GabeN
+ID: 1
+BorrrowRecord
+BookID:4
+CreatedDate:1773609741
+IsConfirmed:True
+RecordID:4
+DueDate:1773609761
+DateReturned:null
+Returned:False
+EndBorrowRecord
+EndAdmin
+Librarian
+User:AlbertW
+Email:Umbrella@gmail.com 
+Password:EvilResident 
+Username:Wesk 
+ID:3
+EndLibrarian

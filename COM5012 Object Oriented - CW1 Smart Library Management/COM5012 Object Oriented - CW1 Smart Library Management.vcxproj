@@ -133,6 +133,7 @@
     <Text Include="Users.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Admin.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookTracking.h" />
     <ClInclude Include="BorrowedRecord.h" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Record.h" />
     <ClInclude Include="ReservedRecord.h" />
     <ClInclude Include="Roles.h" />
+    <ClInclude Include="Settings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,6 +17,7 @@
 // Custom Classes
 
 #include "Member.h"
+#include "Admin.h";
 #include "BorrowedRecord.h"
 #include "ReservedRecord.h"
 
@@ -25,7 +26,7 @@ using namespace std;
 // Global Variables
 
 string currentScreen;
-
+MemberC currentLoggedInMember;
 
 
 void ChangeColourText(int colourCode, string text) {
@@ -88,11 +89,12 @@ int TakeNumericInput(int maximum, string userInputSentence) {
     return finalValue;
 }
 
-bool Login() {
+void Login() {
 
     list<MemberC> memberList;
+    list<AdminC> adminList;
 
-    ifstream inFile; 
+    ifstream inFile;
 
     inFile.open("Users.txt");
 
@@ -102,11 +104,17 @@ bool Login() {
     }
 
     string line;
+
     MemberC currentMember;
+    AdminC currentAdmin;
+
     BorrowedRecord currentBorrowRecord;
     ReservedRecord currentReservedRecord;
 
     bool isCurrentlyReadingMember = false;
+    bool isCurrentlyReadingAdmin = false;
+    bool isCurrentlyReadingLibrarian = false;
+
     bool isCurrentlyReadingBorrowRecord = false;
     bool isCurrentlyReadingReservedRecord = false;
 
@@ -116,7 +124,9 @@ bool Login() {
     while (getline(inFile, line)) {
 
         // User Details Section
-        
+
+        while (!line.empty() && isspace(line.back())) line.pop_back();
+
         // Start Member Object
         if (line == "Member") {
             isCurrentlyReadingMember = true;
@@ -125,15 +135,32 @@ bool Login() {
             borrowedRecordsTemp.clear();
             reservedRecordsTemp.clear();
         }
-        
+
+        // Start Admin Object
+        if (line == "Admin") {
+            isCurrentlyReadingAdmin = true;
+            currentAdmin = AdminC();
+            currentAdmin.SetRole(Administrator);
+            borrowedRecordsTemp.clear();
+            reservedRecordsTemp.clear();
+        }
+
         // End Member Object
 
         if (line == "EndMember") {
             isCurrentlyReadingMember = false;
             currentMember.SetBorrowedList(borrowedRecordsTemp);
             currentMember.SetReservedList(reservedRecordsTemp);
+            adminList.push_back(currentAdmin);
+        }
+
+        // End Admin Object
+
+        if (line == "EndAdmin") {
+            isCurrentlyReadingAdmin = false;
+            currentAdmin.SetBorrowedList(borrowedRecordsTemp);
+            currentAdmin.SetReservedList(reservedRecordsTemp);
             memberList.push_back(currentMember);
-       
         }
 
         // Fill in Member Objects with Data
@@ -147,22 +174,19 @@ bool Login() {
         }
 
         // Borrow Record Creation & Deletion
+        if (line == "BorrowRecord") {
+            isCurrentlyReadingBorrowRecord = true;
+            currentBorrowRecord = BorrowedRecord();
+        }
 
-        if (isCurrentlyReadingMember) {
-            if (line == "BorrowRecord") {
-                isCurrentlyReadingBorrowRecord = true;
-                currentBorrowRecord = BorrowedRecord();
-            }
-
-            if (line == "EndBorrowRecord") {
-                isCurrentlyReadingBorrowRecord = false;
-                borrowedRecordsTemp.push_back(currentBorrowRecord);
-            }
+        if (line == "EndBorrowRecord") {
+            isCurrentlyReadingBorrowRecord = false;
+            borrowedRecordsTemp.push_back(currentBorrowRecord);
         }
 
         // Fill in Borrow Record 
 
-        if (isCurrentlyReadingMember && isCurrentlyReadingBorrowRecord) {
+        if (isCurrentlyReadingBorrowRecord) {
             if (line.starts_with("BookID:")) currentBorrowRecord.SetBook(stoi(line.substr(7)));
             else if (line.starts_with("CreatedDate:"))
             {
@@ -170,7 +194,7 @@ bool Login() {
                 if (lineValue != "null")
                     currentBorrowRecord.SetDateCreated(
                         chrono::system_clock::from_time_t(stoll(lineValue))
-                 );
+                    );
             }
             else if (line.starts_with("IsConfirmed:")) {
                 if (line.substr(12) == "True") currentBorrowRecord.SetConfirmation(true);
@@ -191,21 +215,19 @@ bool Login() {
 
         // Reserve Record Creation & Deletion
 
-        if (isCurrentlyReadingMember) {
-            if (line == "ReservationRecord") {
-                isCurrentlyReadingReservedRecord = true;
-                currentReservedRecord = ReservedRecord();
-            }
+        if (line == "ReservationRecord") {
+            isCurrentlyReadingReservedRecord = true;
+            currentReservedRecord = ReservedRecord();
+        }
 
-            if (line == "EndReservationRecord") {
-                isCurrentlyReadingReservedRecord = false;
-                reservedRecordsTemp.push_back(currentReservedRecord);
-            }
+        if (line == "EndReservationRecord") {
+            isCurrentlyReadingReservedRecord = false;
+            reservedRecordsTemp.push_back(currentReservedRecord);
         }
 
         // Fill in Reserved Record 
 
-        if (isCurrentlyReadingMember && isCurrentlyReadingReservedRecord) {
+        if (isCurrentlyReadingReservedRecord) {
             if (line.starts_with("BookID:")) currentReservedRecord.SetBook(stoi(line.substr(7)));
             else if (line.starts_with("CreatedDate:"))
             {
@@ -227,26 +249,57 @@ bool Login() {
 
     inFile.close();
 
-    cin.get();
+    currentScreen = "Log-in Page";
 
-    /*currentScreen = "Log-in Page";
+    bool foundValidCredentials = false;
 
-    Title();
+    do {
+        system("CLS");
 
-    cout << "Welcome to the High Wycombe Library System !\nPlease Log-in.\n";
+        Title();
 
-    cout << "Username: ";
+        cout << "Welcome to the High Wycombe Library System !\nPlease Log-in.\n";
 
-    string username;
+        string username;
+        string password;
 
-    getline(cin, username);
+        cout << "\nUsername: ";
+        getline(cin, username);
 
-    cin.get();
-    */
+        cout << "\nPassword: ";
+        getline(cin, password);
+
+        for (MemberC& member : memberList) {
+            if (member.CheckLoginDetails(username, password)) {
+                foundValidCredentials = true;
+                currentLoggedInMember = member;
+                break;
+        
+            }
+            else {
+                cout << "Invalid Username or Password.\nPlease Try Again.";
+                cout << member.GetUsername();
+                cin.get();
+            }
+        }
+
+
+    } while (!foundValidCredentials);
 }
+
 
 int main()
 {
     Login();
+
+    system("CLS");
+
+    currentScreen = "Menu";
+
+    Title(); 
+
+    cout << "Welcome back to the High Wycombe City Library " << currentLoggedInMember.GetName() << ".";
+
+    cin.get();
 }
 

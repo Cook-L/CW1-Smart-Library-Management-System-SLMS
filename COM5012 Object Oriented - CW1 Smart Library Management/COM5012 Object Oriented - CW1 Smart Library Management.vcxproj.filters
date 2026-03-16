@@ -49,5 +49,11 @@
     <ClInclude Include="ReservedRecord.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Admin.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -76,4 +76,9 @@ public:
 		cout << "Role: " << roleString << "\n";
 		cout << "MemberID: " << memberID << "\n";
 	}
+
+	bool CheckLoginDetails(string usernamePass, string passwordPass) {
+		if (username == usernamePass && password == passwordPass) return true;
+		else return false;
+	}
 };
