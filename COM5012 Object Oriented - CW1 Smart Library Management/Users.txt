@@ -41,9 +41,9 @@ EndReservationRecord
 EndMember
 Admin
 User:Gabriel
-Email: Gabe@gmail.com
-Password: ValveCEO
-Username: GabeN
+Email:Gabe@gmail.com
+Password:ValveCEO
+Username:GabeN
 ID: 1
 BorrrowRecord
 BookID:4

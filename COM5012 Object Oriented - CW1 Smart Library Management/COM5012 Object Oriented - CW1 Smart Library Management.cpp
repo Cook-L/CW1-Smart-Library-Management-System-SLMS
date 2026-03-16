@@ -27,7 +27,7 @@ using namespace std;
 
 string currentScreen;
 MemberC currentLoggedInMember;
-
+AdminC currentLoggedInAdmin;
 
 void ChangeColourText(int colourCode, string text) {
     HANDLE console_color;
@@ -151,7 +151,7 @@ void Login() {
             isCurrentlyReadingMember = false;
             currentMember.SetBorrowedList(borrowedRecordsTemp);
             currentMember.SetReservedList(reservedRecordsTemp);
-            adminList.push_back(currentAdmin);
+            memberList.push_back(currentAdmin);
         }
 
         // End Admin Object
@@ -160,7 +160,7 @@ void Login() {
             isCurrentlyReadingAdmin = false;
             currentAdmin.SetBorrowedList(borrowedRecordsTemp);
             currentAdmin.SetReservedList(reservedRecordsTemp);
-            memberList.push_back(currentMember);
+            adminList.push_back(currentAdmin);
         }
 
         // Fill in Member Objects with Data
@@ -171,6 +171,16 @@ void Login() {
             if (line.starts_with("Password:")) currentMember.SetPassword(line.substr(9));
             if (line.starts_with("Username:")) currentMember.SetUsername(line.substr(9));
             if (line.starts_with("ID:")) currentMember.SetMemberID(stoi(line.substr(3)));
+        }
+
+        // Fill in Member Objects with Data
+
+        if (isCurrentlyReadingAdmin) {
+            if (line.starts_with("User:")) currentAdmin.SetName(line.substr(5));
+            if (line.starts_with("Email:")) currentAdmin.SetEmail(line.substr(6));
+            if (line.starts_with("Password:")) currentAdmin.SetPassword(line.substr(9));
+            if (line.starts_with("Username:")) currentAdmin.SetUsername(line.substr(9));
+            if (line.starts_with("ID:")) currentAdmin.SetMemberID(stoi(line.substr(3)));
         }
 
         // Borrow Record Creation & Deletion
@@ -276,13 +286,21 @@ void Login() {
                 break;
         
             }
-            else {
-                cout << "Invalid Username or Password.\nPlease Try Again.";
-                cout << member.GetUsername();
-                cin.get();
+        }
+
+        for (AdminC& admin : adminList) {
+            if (admin.CheckLoginDetails(username, password)) {
+                foundValidCredentials = true;
+                currentLoggedInAdmin = admin;
+                break;
+
             }
         }
 
+        if (!foundValidCredentials) {
+            cout << "Invalid Username or Password.\nPlease Try Again.";
+            cin.get();
+        }
 
     } while (!foundValidCredentials);
 }
@@ -298,7 +316,16 @@ int main()
 
     Title(); 
 
-    cout << "Welcome back to the High Wycombe City Library " << currentLoggedInMember.GetName() << ".";
+    string currentName;
+    if (currentLoggedInMember.GetUsername().empty()) {
+        if (currentLoggedInAdmin.GetUsername().empty()) {
+            // Librarian Code Here
+        }
+        else currentName = currentLoggedInAdmin.GetName();
+    }
+    else currentName = currentLoggedInMember.GetName();
+
+    cout << "Welcome back to the High Wycombe City Library " << currentName << ".";
 
     cin.get();
 }
