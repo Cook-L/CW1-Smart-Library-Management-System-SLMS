@@ -15,8 +15,8 @@ private:
 	string email;
 	string password;
 	string username;
-	optional<list<BorrowedRecord>> borrowedRecordList;
-	optional<list<ReservedRecord>> reservedRecordList;
+	list<BorrowedRecord> borrowedRecordList;
+	list<ReservedRecord> reservedRecordList;
 	Roles role;
 	int memberID; 
 public: 	
@@ -36,11 +36,11 @@ public:
 		return memberID;
 	}
 
-	optional<list<BorrowedRecord>> GetBorrowedRecords() {
+	list<BorrowedRecord> GetBorrowedRecords() {
 		return borrowedRecordList;
 	}
 
-	optional<list<ReservedRecord>> GetReservedRecordsList() {
+	list<ReservedRecord> GetReservedRecordsList() {
 		return reservedRecordList;
 	}
 
@@ -50,8 +50,8 @@ public:
 	void SetUsername(string usernamePass) { username = usernamePass; }
 	void SetRole(Roles rolePass) { role = rolePass; }
 	void SetMemberID(int idPass) { memberID = idPass; }
-	void SetBorrowedList(optional<list<BorrowedRecord>> borrowedRecordListPass) { borrowedRecordList = borrowedRecordListPass; }
-	void SetReservedList (optional<list<ReservedRecord>> reservedRecordList) { reservedRecordList = reservedRecordList; }
+	void SetBorrowedList(list<BorrowedRecord> borrowedRecordListPass) { borrowedRecordList = borrowedRecordListPass; }
+	void SetReservedList (list<ReservedRecord> reservedRecordList) { reservedRecordList = reservedRecordList; }
 	void DisplayMemberDetails() {
 
 		string roleString;

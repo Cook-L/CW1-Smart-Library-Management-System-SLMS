@@ -111,6 +111,7 @@ bool Login() {
     bool isCurrentlyReadingReservedRecord = false;
 
     list<BorrowedRecord> borrowedRecordsTemp;
+    list<ReservedRecord> reservedRecordsTemp;
 
     while (getline(inFile, line)) {
 
@@ -122,6 +123,7 @@ bool Login() {
             currentMember = MemberC();
             currentMember.SetRole(Member);
             borrowedRecordsTemp.clear();
+            reservedRecordsTemp.clear();
         }
         
         // End Member Object
@@ -129,6 +131,7 @@ bool Login() {
         if (line == "EndMember") {
             isCurrentlyReadingMember = false;
             currentMember.SetBorrowedList(borrowedRecordsTemp);
+            currentMember.SetReservedList(reservedRecordsTemp);
             memberList.push_back(currentMember);
        
         }
@@ -178,27 +181,51 @@ bool Login() {
             else if (line.starts_with("DateReturned:"))
             {
                 string lineValue = line.substr(13);
-                if (lineValue != "null")
-                {
-                    currentBorrowRecord.SetDateReturned(
-                        chrono::system_clock::from_time_t(stoll(lineValue))
-                    );
-                }
+                if (lineValue != "null") currentBorrowRecord.SetDateReturned(chrono::system_clock::from_time_t(stoll(lineValue)));
             }
             else if (line.starts_with("Returned:")) {
                 if (line.substr(9) == "True") currentBorrowRecord.SetReturned(true);
                 else if (line.substr(9) == "False") currentBorrowRecord.SetReturned(false);
             }
         }
+
+        // Reserve Record Creation & Deletion
+
+        if (isCurrentlyReadingMember) {
+            if (line == "ReservationRecord") {
+                isCurrentlyReadingReservedRecord = true;
+                currentReservedRecord = ReservedRecord();
+            }
+
+            if (line == "EndReservationRecord") {
+                isCurrentlyReadingReservedRecord = false;
+                reservedRecordsTemp.push_back(currentReservedRecord);
+            }
+        }
+
+        // Fill in Reserved Record 
+
+        if (isCurrentlyReadingMember && isCurrentlyReadingReservedRecord) {
+            if (line.starts_with("BookID:")) currentReservedRecord.SetBook(stoi(line.substr(7)));
+            else if (line.starts_with("CreatedDate:"))
+            {
+                string lineValue = line.substr(12);
+                if (lineValue != "null") currentReservedRecord.SetDateCreated(chrono::system_clock::from_time_t(stoll(lineValue)));
+            }
+            else if (line.starts_with("IsConfirmed:")) {
+                if (line.substr(12) == "True") currentReservedRecord.SetConfirmation(true);
+                else if (line.substr(12) == "False") currentReservedRecord.SetConfirmation(false);
+            }
+            else  if (line.starts_with("RecordID:")) currentReservedRecord.SetRecordID(stoi(line.substr(9)));
+            else if (line.starts_with("Availible:")) {
+                if (line.substr(10) == "True") currentReservedRecord.SetAvailible(true);
+                else if (line.substr(10) == "False") currentReservedRecord.SetAvailible(false);
+            }
+        }
+
     }
 
     inFile.close();
-
-    optional<list<BorrowedRecord>> recordlist = memberList.front().GetBorrowedRecords();
-
-    BorrowedRecord& record = recordlist->front();
-
-    record.DisplayDetails();
 
     cin.get();
 

@@ -3,31 +3,34 @@
   "WorkspaceRootPath": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Member.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Users.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Users.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Member.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -45,17 +48,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Member.h",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h",
               "RelativeDocumentMoniker": "Member.h",
               "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h",
               "RelativeToolTip": "Member.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-15T20:35:46.013Z",
               "IsPinned": true,
@@ -63,14 +66,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "optional",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-16T02:31:55.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "string",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
               "ViewState": "AgIAAIsAAAAAAAAAAAAWwKEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-16T01:46:59.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T01:46:59.431Z"
             },
             {
               "$type": "Document",
@@ -80,27 +93,27 @@
               "RelativeDocumentMoniker": "ReservedRecord.h",
               "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h",
               "RelativeToolTip": "ReservedRecord.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-15T22:10:58.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BorrowedRecord.h",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
               "RelativeDocumentMoniker": "BorrowedRecord.h",
               "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
               "RelativeToolTip": "BorrowedRecord.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAmwCsAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-15T21:51:49.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Book.h",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h",
               "RelativeDocumentMoniker": "Book.h",
@@ -108,18 +121,17 @@
               "RelativeToolTip": "Book.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-15T21:32:48.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-15T21:32:48.396Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Record.h",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h",
               "RelativeDocumentMoniker": "Record.h",
               "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h",
               "RelativeToolTip": "Record.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBsAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-03-15T21:26:10.454Z",
               "EditorCaption": ""
@@ -132,14 +144,14 @@
               "RelativeDocumentMoniker": "Users.txt",
               "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Users.txt",
               "RelativeToolTip": "Users.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2026-03-15T19:25:28.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Roles.h",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Roles.h",
               "RelativeDocumentMoniker": "Roles.h",
@@ -151,13 +163,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "DocumentMoniker": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "RelativeDocumentMoniker": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
-              "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp*",
-              "RelativeToolTip": "COM5012 Object Oriented - CW1 Smart Library Management.cpp*",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAIwHYAAAAIAAAAAAAAAA==",
+              "ToolTip": "G:\\GitHub\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp",
+              "RelativeToolTip": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAwOUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-15T18:46:45.536Z",
               "EditorCaption": ""
