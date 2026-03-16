@@ -2,7 +2,7 @@
 #include <chrono>
 #include "Book.h"
 #include <iostream>
-
+#include <format>
 using namespace std;
 
 class Record {
@@ -21,4 +21,11 @@ public:
 	void SetDateCreated(chrono::system_clock::time_point dateCreatedPass) { dateCreated = dateCreatedPass; }
 	void SetConfirmation(bool confirmedPass) { isConfirmed = confirmedPass; }
 	void SetRecordID(int recordIDPass) { recordID = recordIDPass; }
+
+	virtual void DisplayDetails() = 0 {
+		cout << "BookID: " << bookID << "\n";
+		cout << "Date Created: " << std::format("{:%Y-%m-%d}", dateCreated) << "\n";
+		cout << "Is Confirmed: " << (isConfirmed ? "True" : "False") << "\n";
+		cout << "RecordID: " << recordID << "\n";
+	}
 };

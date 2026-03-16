@@ -110,21 +110,27 @@ bool Login() {
     bool isCurrentlyReadingBorrowRecord = false;
     bool isCurrentlyReadingReservedRecord = false;
 
-    while (getline(inFile, line)) {
-        // User Details Section
+    list<BorrowedRecord> borrowedRecordsTemp;
 
+    while (getline(inFile, line)) {
+
+        // User Details Section
+        
         // Start Member Object
         if (line == "Member") {
             isCurrentlyReadingMember = true;
             currentMember = MemberC();
             currentMember.SetRole(Member);
+            borrowedRecordsTemp.clear();
         }
         
         // End Member Object
 
         if (line == "EndMember") {
             isCurrentlyReadingMember = false;
+            currentMember.SetBorrowedList(borrowedRecordsTemp);
             memberList.push_back(currentMember);
+       
         }
 
         // Fill in Member Objects with Data
@@ -147,6 +153,7 @@ bool Login() {
 
             if (line == "EndBorrowRecord") {
                 isCurrentlyReadingBorrowRecord = false;
+                borrowedRecordsTemp.push_back(currentBorrowRecord);
             }
         }
 
@@ -154,15 +161,31 @@ bool Login() {
 
         if (isCurrentlyReadingMember && isCurrentlyReadingBorrowRecord) {
             if (line.starts_with("BookID:")) currentBorrowRecord.SetBook(stoi(line.substr(7)));
-            if (line.starts_with("DateCreated:")) currentBorrowRecord.SetDateCreated(std::chrono::system_clock::from_time_t(std::stoll(line.substr(12))));
-            if (line.starts_with("IsConfirmed:")) {
+            else if (line.starts_with("CreatedDate:"))
+            {
+                string lineValue = line.substr(12);
+                if (lineValue != "null")
+                    currentBorrowRecord.SetDateCreated(
+                        chrono::system_clock::from_time_t(stoll(lineValue))
+                 );
+            }
+            else if (line.starts_with("IsConfirmed:")) {
                 if (line.substr(12) == "True") currentBorrowRecord.SetConfirmation(true);
                 else if (line.substr(12) == "False") currentBorrowRecord.SetConfirmation(false);
             }
-            if (line.starts_with("RecordID:")) currentBorrowRecord.SetRecordID(stoi(line.substr(9)));
-            if (line.starts_with("DueDate:")) currentBorrowRecord.SetDueDate(std::chrono::system_clock::from_time_t(std::stoll(line.substr(8))));
-            if (line.starts_with("DateReturned:")) currentBorrowRecord.SetDateReturned(std::chrono::system_clock::from_time_t(std::stoll(line.substr(13))));
-            if (line.starts_with("Returned:")) {
+            else  if (line.starts_with("RecordID:")) currentBorrowRecord.SetRecordID(stoi(line.substr(9)));
+            else if (line.starts_with("DueDate:")) currentBorrowRecord.SetDueDate(std::chrono::system_clock::from_time_t(std::stoll(line.substr(8))));
+            else if (line.starts_with("DateReturned:"))
+            {
+                string lineValue = line.substr(13);
+                if (lineValue != "null")
+                {
+                    currentBorrowRecord.SetDateReturned(
+                        chrono::system_clock::from_time_t(stoll(lineValue))
+                    );
+                }
+            }
+            else if (line.starts_with("Returned:")) {
                 if (line.substr(9) == "True") currentBorrowRecord.SetReturned(true);
                 else if (line.substr(9) == "False") currentBorrowRecord.SetReturned(false);
             }
@@ -171,7 +194,11 @@ bool Login() {
 
     inFile.close();
 
-    memberList.front().DisplayMemberDetails();
+    optional<list<BorrowedRecord>> recordlist = memberList.front().GetBorrowedRecords();
+
+    BorrowedRecord& record = recordlist->front();
+
+    record.DisplayDetails();
 
     cin.get();
 

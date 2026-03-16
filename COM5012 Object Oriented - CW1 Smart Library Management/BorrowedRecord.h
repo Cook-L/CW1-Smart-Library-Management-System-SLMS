@@ -32,4 +32,13 @@ public:
 	void SetReturned(bool returnedPass) {
 		returned = returnedPass;
 	}
+
+	void Record::DisplayDetails() {
+		Record::DisplayDetails();
+		cout << "Due Date: " << std::format("{:%Y-%m-%d}", dueDate) << "\n";
+		if (dateReturned.has_value()) cout << "Date Returned: " << std::format("{:%Y-%m-%d}", dateReturned.value()) << "\n";
+		else cout << "Date Returned: " << "null" << "\n";
+		cout << "Returned: " << (returned ? "True" : "False") << "\n";
+
+	}
 };
