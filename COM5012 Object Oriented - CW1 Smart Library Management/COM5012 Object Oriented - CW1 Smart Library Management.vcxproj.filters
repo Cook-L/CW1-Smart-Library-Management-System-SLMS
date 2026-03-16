@@ -31,5 +31,23 @@
     <ClInclude Include="Roles.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Record.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BookTracking.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotificationType.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BorrowedRecord.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReservedRecord.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

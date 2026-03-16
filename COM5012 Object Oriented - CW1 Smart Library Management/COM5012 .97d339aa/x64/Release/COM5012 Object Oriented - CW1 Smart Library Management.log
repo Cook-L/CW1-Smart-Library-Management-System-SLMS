@@ -2,11 +2,11 @@
 G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\Member.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'COM5012%20Object%20Oriented%20-%20CW1%20Smart%20Library%20Management.cpp')
   
-G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\COM5012 Object Oriented - CW1 Smart Library Management.cpp(73,34): warning C4101: 'e': unreferenced local variable
+G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\COM5012 Object Oriented - CW1 Smart Library Management.cpp(74,34): warning C4101: 'e': unreferenced local variable
   Generating code
-G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\COM5012 Object Oriented - CW1 Smart Library Management.cpp(115): warning C4715: 'Login': not all control paths return a value
-  38 of 228 functions (16.7%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    19 functions had inline decision re-evaluated but remain unchanged
+G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\COM5012 Object Oriented - CW1 Smart Library Management.cpp(138): warning C4715: 'Login': not all control paths return a value
+  2 of 266 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   COM5012 Object Oriented - CW1 Smart Library Management.vcxproj -> G:\GitHub\CW1-Smart-Library-Management-System-SLMS\COM5012 Object Oriented - CW1 Smart Library Management\x64\Release\COM5012 Object Oriented - CW1 Smart Library Management.exe

@@ -133,7 +133,13 @@
     <Text Include="Users.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="BookTracking.h" />
+    <ClInclude Include="BorrowedRecord.h" />
     <ClInclude Include="Member.h" />
+    <ClInclude Include="NotificationType.h" />
+    <ClInclude Include="Record.h" />
+    <ClInclude Include="ReservedRecord.h" />
     <ClInclude Include="Roles.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

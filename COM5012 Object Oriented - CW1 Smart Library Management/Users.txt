@@ -1,5 +1,41 @@
-MEMBER
-User "Leon"
-Email leonEmail@gmail.com 
-Password P@ssW0rd 
-Username LCook 
+Member
+User:Leon
+Email:leonEmail@gmail.com 
+Password:P@ssW0rd 
+Username:LCook 
+ID:0
+BorrowRecord
+BookID:0
+CreatedDate:1773609751
+IsConfirmed:True
+RecordID:0
+DueDate:1773609751
+DateReturned:null
+Returned:False
+EndBorrowRecord
+BorrowRecord
+BookID:1
+CreatedDate:1773609751
+IsConfirmed:True
+RecordID:1
+DueDate:1773609751
+DateReturned:null
+Returned:False
+EndBorrowRecord
+BorrowRecord
+BookID:2
+CreatedDate:1773609751
+IsConfirmed:True
+RecordID:2
+DueDate:1773609751
+DateReturned:null
+Returned:False
+EndBorrowRecord
+ReservationRecord
+BookID:7
+CreatedDate:1773609751
+IsConfirmed:True
+RecordID:3
+Availible:False
+EndReservationRecord
+EndMember

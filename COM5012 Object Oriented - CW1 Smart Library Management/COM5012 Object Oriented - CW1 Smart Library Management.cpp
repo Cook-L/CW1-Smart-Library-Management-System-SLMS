@@ -2,6 +2,8 @@
 // COM5012 SLMS System -> Main File
 
 
+// Libraries 
+
 #include <iostream>
 #include <String>
 #include <stdlib.h>
@@ -11,7 +13,12 @@
 #include <list>
 #include <fstream>
 #include <vector>
+
+// Custom Classes
+
 #include "Member.h"
+#include "BorrowedRecord.h"
+#include "ReservedRecord.h"
 
 using namespace std; 
 
@@ -95,22 +102,80 @@ bool Login() {
     }
 
     string line;
-    vector<string> copiedFile;
+    MemberC currentMember;
+    BorrowedRecord currentBorrowRecord;
+    ReservedRecord currentReservedRecord;
 
+    bool isCurrentlyReadingMember = false;
+    bool isCurrentlyReadingBorrowRecord = false;
+    bool isCurrentlyReadingReservedRecord = false;
 
-    while (getline(inFile, line, ' ')) {
-        copiedFile.push_back(line);
-    }
+    while (getline(inFile, line)) {
+        // User Details Section
 
-    for (string s : copiedFile) {
-        if (s == "Member") {
-            MemberC memberInstance;
+        // Start Member Object
+        if (line == "Member") {
+            isCurrentlyReadingMember = true;
+            currentMember = MemberC();
+            currentMember.SetRole(Member);
+        }
+        
+        // End Member Object
 
-            memberInstance.
+        if (line == "EndMember") {
+            isCurrentlyReadingMember = false;
+            memberList.push_back(currentMember);
+        }
+
+        // Fill in Member Objects with Data
+
+        if (isCurrentlyReadingMember) {
+            if (line.starts_with("User:")) currentMember.SetName(line.substr(5));
+            if (line.starts_with("Email:")) currentMember.SetEmail(line.substr(6));
+            if (line.starts_with("Password:")) currentMember.SetPassword(line.substr(9));
+            if (line.starts_with("Username:")) currentMember.SetUsername(line.substr(9));
+            if (line.starts_with("ID:")) currentMember.SetMemberID(stoi(line.substr(3)));
+        }
+
+        // Borrow Record Creation & Deletion
+
+        if (isCurrentlyReadingMember) {
+            if (line == "BorrowRecord") {
+                isCurrentlyReadingBorrowRecord = true;
+                currentBorrowRecord = BorrowedRecord();
+            }
+
+            if (line == "EndBorrowRecord") {
+                isCurrentlyReadingBorrowRecord = false;
+            }
+        }
+
+        // Fill in Borrow Record 
+
+        if (isCurrentlyReadingMember && isCurrentlyReadingBorrowRecord) {
+            if (line.starts_with("BookID:")) currentBorrowRecord.SetBook(stoi(line.substr(7)));
+            if (line.starts_with("DateCreated:")) currentBorrowRecord.SetDateCreated(std::chrono::system_clock::from_time_t(std::stoll(line.substr(12))));
+            if (line.starts_with("IsConfirmed:")) {
+                if (line.substr(12) == "True") currentBorrowRecord.SetConfirmation(true);
+                else if (line.substr(12) == "False") currentBorrowRecord.SetConfirmation(false);
+            }
+            if (line.starts_with("RecordID:")) currentBorrowRecord.SetRecordID(stoi(line.substr(9)));
+            if (line.starts_with("DueDate:")) currentBorrowRecord.SetDueDate(std::chrono::system_clock::from_time_t(std::stoll(line.substr(8))));
+            if (line.starts_with("DateReturned:")) currentBorrowRecord.SetDateReturned(std::chrono::system_clock::from_time_t(std::stoll(line.substr(13))));
+            if (line.starts_with("Returned:")) {
+                if (line.substr(9) == "True") currentBorrowRecord.SetReturned(true);
+                else if (line.substr(9) == "False") currentBorrowRecord.SetReturned(false);
+            }
         }
     }
 
-    currentScreen = "Log-in Page";
+    inFile.close();
+
+    memberList.front().DisplayMemberDetails();
+
+    cin.get();
+
+    /*currentScreen = "Log-in Page";
 
     Title();
 
@@ -123,6 +188,7 @@ bool Login() {
     getline(cin, username);
 
     cin.get();
+    */
 }
 
 int main()

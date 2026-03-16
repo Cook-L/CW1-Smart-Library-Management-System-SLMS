@@ -1,6 +1,11 @@
 #pragma once
 #include <string>
-#include "Roles.h";
+#include <optional>
+#include <list>
+
+#include "Roles.h"
+#include "BorrowedRecord.h"
+#include "ReservedRecord.h"
 
 using namespace std;
 
@@ -10,8 +15,8 @@ private:
 	string email;
 	string password;
 	string username;
-	// Borrowed Books
-	// Reserved Books
+	optional<list<BorrowedRecord>> borrowedRecordList;
+	optional<list<ReservedRecord>> reservedRecordList;
 	Roles role;
 	int memberID; 
 public: 	
@@ -31,4 +36,44 @@ public:
 		return memberID;
 	}
 
+	optional<list<BorrowedRecord>> GetBorrowedRecords() {
+		return borrowedRecordList;
+	}
+
+	optional<list<ReservedRecord>> GetReservedRecordsList() {
+		return reservedRecordList;
+	}
+
+	void SetName(string firstNamePass) {firstName = firstNamePass;}
+	void SetEmail(string emailPass) { email = emailPass; }
+	void SetPassword(string passwordPass) { password = passwordPass; }
+	void SetUsername(string usernamePass) { username = usernamePass; }
+	void SetRole(Roles rolePass) { role = rolePass; }
+	void SetMemberID(int idPass) { memberID = idPass; }
+	void SetBorrowedList(optional<list<BorrowedRecord>> borrowedRecordListPass) { borrowedRecordList = borrowedRecordListPass; }
+	void SetReservedList (optional<list<ReservedRecord>> reservedRecordList) { reservedRecordList = reservedRecordList; }
+	void DisplayMemberDetails() {
+
+		string roleString;
+
+		switch (role) {
+		case Member:
+			roleString = "Member";
+			break;
+		case Administrator: 
+			roleString = "Administrator";
+			break;
+		case Librarian:
+			roleString = "Librarian";
+			break;
+		}
+
+
+		cout << "Name: " << firstName << "\n";
+		cout << "Email: " << email << "\n";
+		cout << "Password: " << password << "\n";
+		cout << "Username: " << username << "\n";
+		cout << "Role: " << roleString << "\n";
+		cout << "MemberID: " << memberID << "\n";
+	}
 };
