@@ -1,25 +1,32 @@
 // COM5012 Object Oriented - CW1 Smart Library Management
 // COM5012 SLMS System -> Main File
-
-
 // Libraries 
 
 #include <iostream>
-#include <String>
+#include <string>
 #include <stdlib.h>
 #include <stdexcept>
 #include <limits> 
-#include <windows.h>
 #include <list>
 #include <fstream>
 #include <vector>
+#include <windows.h>
 
 // Custom Classes
-
+// User Classes
+ 
 #include "Member.h"
-#include "Admin.h";
+#include "Admin.h"
+#include "Librarian.h"
+
+// Record Classes 
+
 #include "BorrowedRecord.h"
 #include "ReservedRecord.h"
+
+// Helper Methods
+
+#include "HelperMethods.h"
 
 using namespace std; 
 
@@ -28,66 +35,6 @@ using namespace std;
 string currentScreen;
 MemberC currentLoggedInMember;
 AdminC currentLoggedInAdmin;
-
-void ChangeColourText(int colourCode, string text) {
-    HANDLE console_color;
-    console_color = GetStdHandle(
-        STD_OUTPUT_HANDLE);
-
-    SetConsoleTextAttribute(console_color, colourCode);
-
-    cout << text;
-
-    SetConsoleTextAttribute(console_color, 7);
-}
-
-void Title()
-{
-    ChangeColourText(10, "High Wycombe City Library System\n");
-    ChangeColourText(10, "Current Screen : " + currentScreen + "\n");
-    cout << "=====================================\n\n";
-}
-
-int TakeNumericInput(int maximum, string userInputSentence) {
-    // Stores a valid numeric input and returns it
-
-    bool foundValue = false;
-    int finalValue = 0;
-
-    do {
-        system("CLS");
-
-        Title();
-
-        cout << userInputSentence;
-
-        string userInput;
-
-        getline(cin, userInput);
-
-        try {
-            int input = stoi(userInput);
-
-            if (input < maximum && input > 0)
-            {
-                foundValue = true;
-                finalValue = input;
-            }
-            else 
-            {
-                cout << "Please write an input between 0 and " << maximum;
-                cin.get();
-            }
-        }
-        catch (invalid_argument& e) {
-
-            cout << "Be sure to write a valid, whole integer. ";
-            cin.get();
-        }
-    } while (!foundValue);
-
-    return finalValue;
-}
 
 void Login() {
 
@@ -266,7 +213,7 @@ void Login() {
     do {
         system("CLS");
 
-        Title();
+        HelperMethods::Title(currentScreen);
 
         cout << "Welcome to the High Wycombe Library System !\nPlease Log-in.\n";
 
@@ -314,7 +261,7 @@ int main()
 
     currentScreen = "Menu";
 
-    Title(); 
+    HelperMethods::Title(currentScreen);
 
     string currentName;
     if (currentLoggedInMember.GetUsername().empty()) {

@@ -55,5 +55,11 @@
     <ClInclude Include="Settings.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Librarian.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HelperMethods.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
