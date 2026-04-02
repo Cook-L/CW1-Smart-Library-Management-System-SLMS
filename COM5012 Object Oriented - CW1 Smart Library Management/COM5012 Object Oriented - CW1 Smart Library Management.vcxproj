@@ -130,6 +130,7 @@
     <ClCompile Include="COM5012 Object Oriented - CW1 Smart Library Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Books.txt" />
     <Text Include="Users.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,8 @@
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookTracking.h" />
     <ClInclude Include="BorrowedRecord.h" />
+    <ClInclude Include="CustomEnums.h" />
+    <ClInclude Include="CustomErrors.h" />
     <ClInclude Include="HelperMethods.h" />
     <ClInclude Include="Librarian.h" />
     <ClInclude Include="Member.h" />

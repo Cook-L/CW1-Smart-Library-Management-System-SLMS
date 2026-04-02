@@ -6,6 +6,11 @@ class AdminC : public MemberC {
 private:
 	Settings settings;
 public:
+
+	AdminC() {
+		SetRole(Administrator);
+	}
+
 	bool UpdateUserFirstName(MemberC memberToUpdate,string name) {
 		try {
 			memberToUpdate.SetName(name);

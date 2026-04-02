@@ -1,0 +1,30 @@
+Book
+Title:Deep Work
+Author:Cal Newport
+Publisher:Grand Central Publishing
+Date:5 January 2016
+Genre:Self-Help
+ID:1
+PageCount:304
+Status:Availible
+EndBook
+Book
+Title:Frankenstein
+Author:Mary Shelley
+Publisher:Penguin Classics
+Date:1 January 1818
+Genre:Gothic Horror
+ID:2
+PageCount:224
+Status:Borrowed
+EndBook
+Book
+Title:Atomic Habits
+Author:James Clear
+Publisher:Avery Publishing
+Date:16 October 2018
+Genre:Self Help
+ID:3
+PageCount:320
+Status:Reserved
+EndBook

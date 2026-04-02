@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "Settings.h"
 #include "Member.h"
 #include "BorrowedRecord.h"
@@ -8,6 +7,11 @@
 
 class LibrarianC : public MemberC {
 public:
+
+	LibrarianC() {
+		SetRole(Librarian);
+	}
+
 	list<BorrowedRecord> ViewUserBorrows(int memberID, list<MemberC> memberList) {
 		try {
 			for (MemberC member : memberList) {

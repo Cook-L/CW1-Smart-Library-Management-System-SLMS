@@ -20,12 +20,21 @@ private:
 	Roles role;
 	int memberID; 
 public: 	
+
+	MemberC() {
+		role = Member;
+	}
+
 	string GetName() {
 		return firstName; 
 	}
 
 	string GetUsername() {
 		return username;
+	}
+
+	string GetPassword() {
+		return password;
 	}
 
 	Roles GetRole() {
@@ -81,4 +90,6 @@ public:
 		if (username == usernamePass && password == passwordPass) return true;
 		else return false;
 	}
+
+	
 };
