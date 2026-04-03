@@ -37,6 +37,10 @@ public:
 		return password;
 	}
 
+	string GetEmail() {
+		return email;
+	}
+
 	Roles GetRole() {
 		return role;
 	}

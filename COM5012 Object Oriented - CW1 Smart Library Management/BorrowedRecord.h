@@ -6,7 +6,7 @@
 class BorrowedRecord : public Record {
 private: 
 	chrono::system_clock::time_point dueDate;
-	std::optional<chrono::system_clock::time_point> dateReturned;
+	optional<chrono::system_clock::time_point> dateReturned;
 	bool returned;
 public: 
 	chrono::system_clock::time_point GetDueDate() {

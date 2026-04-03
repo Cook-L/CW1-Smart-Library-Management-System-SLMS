@@ -6,7 +6,7 @@ Date:5 January 2016
 Genre:Self-Help
 ID:1
 PageCount:304
-Status:Availible
+Status:Borrowed
 EndBook
 Book
 Title:Frankenstein

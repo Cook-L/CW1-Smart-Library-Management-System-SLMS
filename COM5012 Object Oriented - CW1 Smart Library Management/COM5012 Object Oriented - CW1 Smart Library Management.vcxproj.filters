@@ -23,7 +23,9 @@
     <Text Include="Users.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Books.txt" />
+    <Text Include="Books.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Member.h">
@@ -39,9 +41,6 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="BookTracking.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NotificationType.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="BorrowedRecord.h">
@@ -66,6 +65,9 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="CustomEnums.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManagement.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>

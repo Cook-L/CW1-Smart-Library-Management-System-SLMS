@@ -8,9 +8,10 @@
 #include <stdexcept>
 #include <limits> 
 #include <list>
-#include <fstream>
 #include <vector>
 #include <windows.h>
+#include <algorithm>
+#include <chrono>
 
 // Custom Classes
 // User Classes
@@ -24,11 +25,11 @@
 #include "BorrowedRecord.h"
 #include "ReservedRecord.h"
 
-// Helper Methods
+// Custom Methods, Helper Methods & Data Management
 
 #include "HelperMethods.h"
 #include "CustomErrors.h"
-
+#include "DataManagement.h"
 
 // Enum to use
 
@@ -58,7 +59,6 @@ void DeleteBook();
 void QuitProgram();
 void Login();
 void HomePage();
-void IntroductionPath();
 void LogOut();
 void BorrowBook();
 void ReturnBook();
@@ -72,7 +72,7 @@ void Login() {
     do {
         system("CLS");
 
-        HelperMethods::Title(currentScreen);
+        Title(currentScreen);
 
         cout << "Welcome to the High Wycombe Library System !\nPlease Log-in.\n";
 
@@ -125,16 +125,18 @@ void Login() {
         if (!foundValidCredentials) {
             cout << "\n";
             UserNotFoundException error;
-            HelperMethods::ErrorFormatting(error);
+            ErrorFormatting(error);
         }
 
     } while (!foundValidCredentials);
+
+    HomePage();
 }
 
 void HomePage() {
     currentScreen = "Home Page";
 
-    HelperMethods::Title(currentScreen);
+    Title(currentScreen);
 
     string currentName;
 
@@ -168,25 +170,20 @@ void HomePage() {
         break;
     }
 
-    cout << "Welcome back to the High Wycombe City Library " << currentName << ".";
+    cout << "High Wycombe Library Home Page Loading . . ." << endl;
 
     cin.get();
 
-    HelperMethods::CreateMenu(currentScreen, "What do you need to do?", optionTitles, methodReferences);
 
-    cin.get();
-}
+    CreateMenu(currentScreen, "What do you need to do?", optionTitles, methodReferences);
 
-void IntroductionPath() {
-    Login();
-    HomePage();
 }
 
 void LogOut() {
 
-    HelperMethods::Title("Logging Out");
+    Title("Logging Out");
 
-    HelperMethods::ChangeColourText(4, "We will see you next time!");
+    ChangeColourText(4, "We will see you next time!");
 
     cin.get();
 
@@ -195,7 +192,7 @@ void LogOut() {
     currentLoggedInMember = nullptr;
 
     currentUserType = NoneSelected;
-    IntroductionPath();
+    Login();
 }
 
 void AddBook() {
@@ -212,7 +209,7 @@ void DeleteBook() {
 
 void ReturnBook() 
 {
-    HelperMethods::Title("Return Book");
+    Title("Return Book");
 
     vector<string> bookTitlesToReturn;
     list<int> borrowedBookID;
@@ -237,252 +234,179 @@ void ReturnBook()
         }
     }
 
-    int userChoice = HelperMethods::TakeNumericInput(bookTitlesToReturn.size(), "What book are you returning today?", currentScreen, bookTitlesToReturn);
+    int userChoice = TakeNumericInput(bookTitlesToReturn.size(), "What book are you returning today?", currentScreen, bookTitlesToReturn);
 }
 
-void BorrowBook() 
+void BorrowBook()
 {
-    HelperMethods::Title("Borrow Book");
-
     vector<string> booksToBorrow;
+    vector<int> bookIDs;
 
-    for (Book book : bookList) if (book.GetStatus() == Availible) booksToBorrow.push_back(book.GetTitle());
+    for (Book& book : bookList) {
+        if (book.GetStatus() == Availible) {
+            booksToBorrow.push_back(book.GetTitle());
+            bookIDs.push_back(book.GetID());
+        }
+    }
 
-    int userChoice = HelperMethods::TakeNumericInput(booksToBorrow.size(), "What book would you like to borrow?", currentScreen, booksToBorrow);
+    if (booksToBorrow.size() == 0) 
+    {
+        NoAvailibleBooks error;
+        ErrorFormatting(error);
+        return;
+    }
 
-    // Save Choice to Database
+    currentScreen = "BorrowBook";
+
+    vector<string> formattedOptions;
+
+    for (int i = 0; i < booksToBorrow.size(); i++) formattedOptions.push_back("ID: " + to_string(bookIDs[i]) + " Title: " + booksToBorrow[i]);
+
+    bool foundValue = false;
+    int finalValue = 0;
+
+    do {
+        system("CLS");
+
+        Title(currentScreen);
+
+        cout << "What is the ID of the book you want to borrow? (Type CANCEL if you no longer want to borrow a book)" << "\n";
+
+        string userInput;
+
+        for (string option : formattedOptions) {
+            cout << option << endl;
+        }
+
+        cout << "\nUser Choice: ";
+
+        getline(cin, userInput);
+
+        try {
+            if (userInput == "CANCEL") {
+
+                Title(currentScreen);
+
+                cout << "Exiting back to Home Screen . . .";
+
+                cin.get();
+
+                HomePage();
+                return;
+            }
+
+            int input = stoi(userInput);
+
+            if (find(bookIDs.begin(),bookIDs.end(),input) != bookIDs.end())
+            {
+                foundValue = true;
+                finalValue = input;
+            }
+            else
+            {
+                cout << "Please write an appropriate ID number or write CANCEL to cancel" << endl;
+                cin.get();
+            }
+        }
+        catch (invalid_argument& e) {
+
+            cout << "Be sure to write a valid, whole integer. ";
+            cin.get();
+        }
+    } while (!foundValue);
+
+    for (Book& book : bookList) {
+        if (book.GetID() == finalValue) {
+            book.SetStatus(Borrowed);
+            break;
+        }
+        else 
+        {
+            BookNotFound error;
+            ErrorFormatting(error);
+            return;
+        }
+    }
+
+    // Find maximum borrowed Records by checking all availible records in all kinds of member
+
+    list<BorrowedRecord> allBorrowedRecords;
+    int maximumRecordID = 0;
+
+     
+
+    for (MemberC& member : memberList) {
+        auto records = member.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (LibrarianC& librarian : librarianList) {
+        auto records = librarian.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (AdminC& admin : adminList) {
+        auto records = admin.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (BorrowedRecord& br : allBorrowedRecords) {
+        if (br.GetRecordID() >= maximumRecordID) maximumRecordID = br.GetRecordID();
+    }
+
+
+    list<BorrowedRecord> newBorrowedList;
+
+    BorrowedRecord br = BorrowedRecord();
+
+    br.SetRecordID(maximumRecordID + 1);
+    br.SetDateCreated(std::chrono::system_clock::now());
+    br.SetConfirmation(false);
+    br.SetBook(finalValue);
+    br.SetDueDate(std::chrono::system_clock::now() + std::chrono::days(5));
+    br.SetReturned(false);
+
+    switch (currentUserType) {
+    case MemberUser:
+        newBorrowedList = currentLoggedInMember->GetBorrowedRecords();
+        newBorrowedList.push_back(br);
+
+        currentLoggedInMember->SetBorrowedList(newBorrowedList);
+        break;
+    case AdminUser:
+        newBorrowedList = currentLoggedInAdmin->GetBorrowedRecords();
+        newBorrowedList.push_back(br);
+
+        currentLoggedInAdmin->SetBorrowedList(newBorrowedList);
+        break;
+    case LibrarianUser:
+        newBorrowedList = currentLoggedInLibrarian->GetBorrowedRecords();
+        newBorrowedList.push_back(br);
+
+        currentLoggedInLibrarian->SetBorrowedList(newBorrowedList);
+        break;
+    }
+    
+    
+    if (SaveBookList(bookList)) cout << "\n\nBook Records Save Succesful";
+    if (SaveUsersList( memberList, librarianList, adminList )) cout << "\n\nUser Records Save Succesful";
 
     cin.get();
+
+    HomePage();
+        
+    
 }
 
 void QuitProgram() {
 
-    HelperMethods::Title("Quitting Program");
+    Title("Quitting Program");
 
-    HelperMethods::ChangeColourText(4, "Exiting High Wycombe Library System . . .\n\n");
+    ChangeColourText(4, "Exiting High Wycombe Library System . . .\n\n");
 
     exit(0);
 
     cin.get();
-}
-
-void LoadBookList() 
-{
-    ifstream inFile; 
-
-    inFile.open("Books.txt");
-
-    if (!inFile) {
-        cout << "Unable to open file Books.txt";
-        exit(1);
-    }
-
-    string line;
-
-    Book currentBook;
-
-    while (getline(inFile, line)) {
-        while (!line.empty() && isspace(line.back())) line.pop_back();
-
-        if (line == "Book") currentBook = Book();
-        if (line == "EndBook") bookList.push_back(currentBook);
-
-        if (line.starts_with("Title:")) currentBook.SetTitle(line.substr(6));
-        else if (line.starts_with("Author:")) currentBook.SetAuthor(line.substr(7));
-        else if (line.starts_with("Publisher:")) currentBook.SetPublisher(line.substr(10));
-        else if (line.starts_with("Date:")) currentBook.SetDateReleased(line.substr(5));
-        else if (line.starts_with("Genre:")) currentBook.SetGenre(line.substr(6));
-        else if (line.starts_with("ID:")) currentBook.SetID(stoi(line.substr(3)));
-        else if (line.starts_with("PageCount:")) currentBook.SetPageCount(stoi(line.substr(10)));
-        else if (line.starts_with("Status:")) 
-        {
-            if (line.substr(7) == "Borrowed") currentBook.SetStatus(Borrowed);
-            else if (line.substr(7) == "Availible") currentBook.SetStatus(Availible);
-            else if (line.substr(7) == "Reserved") currentBook.SetStatus(Reserved);
-        };
-
-    }
-
-    inFile.close();
-}
-
-void LoadUserData() {
-    ifstream inFile;
-
-    inFile.open("Users.txt");
-
-    if (!inFile) {
-        cout << "Unable to open file Users.txt";
-        exit(1);
-    }
-
-    string line;
-
-    MemberC currentMember;
-    AdminC currentAdmin;
-    LibrarianC currentLibrarian;
-
-    BorrowedRecord currentBorrowRecord;
-    ReservedRecord currentReservedRecord;
-
-    bool isCurrentlyReadingMember = false;
-    bool isCurrentlyReadingAdmin = false;
-    bool isCurrentlyReadingLibrarian = false;
-
-    bool isCurrentlyReadingBorrowRecord = false;
-    bool isCurrentlyReadingReservedRecord = false;
-
-    list<BorrowedRecord> borrowedRecordsTemp;
-    list<ReservedRecord> reservedRecordsTemp;
-
-    while (getline(inFile, line)) {
-
-        // User Details Section
-
-        while (!line.empty() && isspace(line.back())) line.pop_back();
-
-        // Start Member Object
-        if (line == "Member") {
-            isCurrentlyReadingMember = true;
-            currentMember = MemberC();
-            borrowedRecordsTemp.clear();
-            reservedRecordsTemp.clear();
-        }
-        // Start Admin Object
-        else if (line == "Admin") {
-            isCurrentlyReadingAdmin = true;
-            currentAdmin = AdminC();
-            borrowedRecordsTemp.clear();
-            reservedRecordsTemp.clear();
-        }
-        // Start Librarian Object
-        else if (line == "Librarian") {
-            isCurrentlyReadingLibrarian = true;
-            currentLibrarian = LibrarianC();
-            borrowedRecordsTemp.clear();
-            reservedRecordsTemp.clear();
-        }
-        // End Member Object
-        else if (line == "EndMember") {
-            isCurrentlyReadingMember = false;
-            currentMember.SetBorrowedList(borrowedRecordsTemp);
-            currentMember.SetReservedList(reservedRecordsTemp);
-            memberList.push_back(currentMember);
-        }
-        // End Admin Object
-        else if (line == "EndAdmin") {
-            isCurrentlyReadingAdmin = false;
-            currentAdmin.SetBorrowedList(borrowedRecordsTemp);
-            currentAdmin.SetReservedList(reservedRecordsTemp);
-            adminList.push_back(currentAdmin);
-        }
-        // End Librarian Object
-        else if (line == "EndLibrarian") {
-            isCurrentlyReadingLibrarian = false;
-            currentLibrarian.SetBorrowedList(borrowedRecordsTemp);
-            currentLibrarian.SetReservedList(reservedRecordsTemp);
-            librarianList.push_back(currentLibrarian);
-        }
-        // Borrow Record Creation & Deletion
-        else if (line == "BorrowRecord") {
-            isCurrentlyReadingBorrowRecord = true;
-            currentBorrowRecord = BorrowedRecord();
-        }
-
-        else if (line == "EndBorrowRecord") {
-            isCurrentlyReadingBorrowRecord = false;
-            borrowedRecordsTemp.push_back(currentBorrowRecord);
-        }
-        // Reserve Record Creation & Deletion
-
-        else if (line == "ReservationRecord") {
-            isCurrentlyReadingReservedRecord = true;
-            currentReservedRecord = ReservedRecord();
-        }
-        else if (line == "EndReservationRecord") {
-            isCurrentlyReadingReservedRecord = false;
-            reservedRecordsTemp.push_back(currentReservedRecord);
-        }
-        // Fill in Member Objects with Data
-        if (isCurrentlyReadingMember) {
-            if (line.starts_with("User:")) currentMember.SetName(line.substr(5));
-            else if (line.starts_with("Email:")) currentMember.SetEmail(line.substr(6));
-            else if (line.starts_with("Password:")) currentMember.SetPassword(line.substr(9));
-            else if (line.starts_with("Username:")) currentMember.SetUsername(line.substr(9));
-            else if (line.starts_with("ID:")) currentMember.SetMemberID(stoi(line.substr(3)));
-        }
-
-        // Fill in Admin Objects with Data
-
-        else  if (isCurrentlyReadingAdmin) {
-            if (line.starts_with("User:")) currentAdmin.SetName(line.substr(5));
-            else if (line.starts_with("Email:")) currentAdmin.SetEmail(line.substr(6));
-            else if (line.starts_with("Password:")) currentAdmin.SetPassword(line.substr(9));
-            else if (line.starts_with("Username:")) currentAdmin.SetUsername(line.substr(9));
-            else if (line.starts_with("ID:")) currentAdmin.SetMemberID(stoi(line.substr(3)));
-        }
-
-        // Fill in Librarian Objects with Data
-
-        else  if (isCurrentlyReadingLibrarian) {
-            if (line.starts_with("User:")) currentLibrarian.SetName(line.substr(5));
-            else if (line.starts_with("Email:")) currentLibrarian.SetEmail(line.substr(6));
-            else if (line.starts_with("Password:")) currentLibrarian.SetPassword(line.substr(9));
-            else if (line.starts_with("Username:")) currentLibrarian.SetUsername(line.substr(9));
-            else if (line.starts_with("ID:")) currentLibrarian.SetMemberID(stoi(line.substr(3)));
-        }
-
-        // Fill in Borrow Record 
-
-        if (isCurrentlyReadingBorrowRecord) {
-            if (line.starts_with("BookID:")) currentBorrowRecord.SetBook(stoi(line.substr(7)));
-            else if (line.starts_with("CreatedDate:"))
-            {
-                string lineValue = line.substr(12);
-                if (lineValue != "null")
-                    currentBorrowRecord.SetDateCreated(
-                        chrono::system_clock::from_time_t(stoll(lineValue))
-                    );
-            }
-            else if (line.starts_with("IsConfirmed:")) {
-                if (line.substr(12) == "True") currentBorrowRecord.SetConfirmation(true);
-                else if (line.substr(12) == "False") currentBorrowRecord.SetConfirmation(false);
-            }
-            else  if (line.starts_with("RecordID:")) currentBorrowRecord.SetRecordID(stoi(line.substr(9)));
-            else if (line.starts_with("DueDate:")) currentBorrowRecord.SetDueDate(std::chrono::system_clock::from_time_t(std::stoll(line.substr(8))));
-            else if (line.starts_with("DateReturned:"))
-            {
-                string lineValue = line.substr(13);
-                if (lineValue != "null") currentBorrowRecord.SetDateReturned(chrono::system_clock::from_time_t(stoll(lineValue)));
-            }
-            else if (line.starts_with("Returned:")) {
-                if (line.substr(9) == "True") currentBorrowRecord.SetReturned(true);
-                else if (line.substr(9) == "False") currentBorrowRecord.SetReturned(false);
-            }
-        }
-        // Fill in Reserved Record 
-
-        if (isCurrentlyReadingReservedRecord) {
-            if (line.starts_with("BookID:")) currentReservedRecord.SetBook(stoi(line.substr(7)));
-            else if (line.starts_with("CreatedDate:"))
-            {
-                string lineValue = line.substr(12);
-                if (lineValue != "null") currentReservedRecord.SetDateCreated(chrono::system_clock::from_time_t(stoll(lineValue)));
-            }
-            else if (line.starts_with("IsConfirmed:")) {
-                if (line.substr(12) == "True") currentReservedRecord.SetConfirmation(true);
-                else if (line.substr(12) == "False") currentReservedRecord.SetConfirmation(false);
-            }
-            else  if (line.starts_with("RecordID:")) currentReservedRecord.SetRecordID(stoi(line.substr(9)));
-            else if (line.starts_with("Availible:")) {
-                if (line.substr(10) == "True") currentReservedRecord.SetAvailible(true);
-                else if (line.substr(10) == "False") currentReservedRecord.SetAvailible(false);
-            }
-        }
-
-    }
-
-    inFile.close();
 }
 
 int main()
@@ -490,6 +414,6 @@ int main()
     SetConsoleTitleA("High Wycombe Library System");
     LoadBookList();
     LoadUserData();
-    IntroductionPath();
+    Login();
 }
 

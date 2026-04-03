@@ -140,10 +140,10 @@
     <ClInclude Include="BorrowedRecord.h" />
     <ClInclude Include="CustomEnums.h" />
     <ClInclude Include="CustomErrors.h" />
+    <ClInclude Include="DataManagement.h" />
     <ClInclude Include="HelperMethods.h" />
     <ClInclude Include="Librarian.h" />
     <ClInclude Include="Member.h" />
-    <ClInclude Include="NotificationType.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="ReservedRecord.h" />
     <ClInclude Include="Roles.h" />
