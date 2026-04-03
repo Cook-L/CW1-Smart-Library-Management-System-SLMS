@@ -26,8 +26,22 @@ public:
 };
 
 class NoAvailibleBooks : public std::exception {
-public: 
+public:
 	const char* what() const noexcept override {
 		return "\nNo books are currently availible for borrow";
+	}
+};
+
+class NoCurrentBorrowedBooks : public std::exception {
+public: 
+	const char* what() const noexcept override {
+		return "\nNo books are borrowed from your account.";
+	}
+};
+
+class NoReserveReadyBooks : public std::exception {
+public: 
+	const char* what() const noexcept override {
+		return "\nNo books are currently able to be reserved.";
 	}
 };

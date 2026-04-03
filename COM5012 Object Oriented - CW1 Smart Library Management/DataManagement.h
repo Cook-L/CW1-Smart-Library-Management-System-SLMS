@@ -7,7 +7,7 @@
 #include "Admin.h"
 #include "Member.h"
 
-extern list<Book> bookList;
+extern vector<Book> bookList;
 extern list<MemberC> memberList;
 extern list<LibrarianC> librarianList;
 extern list<AdminC> adminList;
@@ -378,7 +378,7 @@ static bool SaveUsersList(const list<MemberC>& membersToSave, const list<Librari
     }
 }
 
-static bool SaveBookList(const list<Book>& booksToSave) 
+static bool SaveBookList(const vector<Book>& booksToSave) 
 {
     try {
         ofstream inFile;

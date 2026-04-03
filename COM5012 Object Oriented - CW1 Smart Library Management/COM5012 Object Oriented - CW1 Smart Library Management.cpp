@@ -50,7 +50,7 @@ list<MemberC> memberList;
 list<AdminC> adminList;
 list<LibrarianC> librarianList;
 
-list<Book> bookList;
+vector<Book> bookList;
 
 // Function Declarations to avoid issue with calling functions before compile.
 
@@ -62,6 +62,8 @@ void HomePage();
 void LogOut();
 void BorrowBook();
 void ReturnBook();
+void SuccesfulSave();
+void ReserveBook();
 
 void Login() {
 
@@ -140,8 +142,8 @@ void HomePage() {
 
     string currentName;
 
-    vector<string> optionTitles = { "Add Book","Delete Book", "Quit" };
-    vector<function<void()>> methodReferences = { AddBook, DeleteBook, QuitProgram };
+    vector<string> optionTitles;
+    vector<function<void()>> methodReferences;
 
     switch (currentUserType) {
     case AdminUser:
@@ -149,24 +151,24 @@ void HomePage() {
 
         // Set Admin Homepage Functions
 
-        optionTitles = { "Return Book", "Borrow Book", "Log Out", "Quit" };
-        methodReferences = { ReturnBook, BorrowBook, LogOut, QuitProgram };
+        optionTitles = { "Reserve Book", "Return Book", "Borrow Book", "Log Out", "Quit" };
+        methodReferences = { ReserveBook , ReturnBook, BorrowBook, LogOut, QuitProgram };
         break;
     case LibrarianUser:
         currentName = currentLoggedInLibrarian->GetName();
 
         // Set Librarian Homepage Functions
 
-        optionTitles = { "Add Book","Delete Book","Return Book", "Borrow Book", "Log Out", "Quit" };
-        methodReferences = { AddBook, DeleteBook, ReturnBook, BorrowBook, LogOut, QuitProgram };
+        optionTitles = { "Add Book","Delete Book","Return Book", "Reserve Book" "Borrow Book", "Log Out", "Quit" };
+        methodReferences = { AddBook, DeleteBook, ReturnBook, ReserveBook, BorrowBook, LogOut, QuitProgram };
         break;
     case MemberUser:
         currentName = currentLoggedInMember->GetName();
 
         // Set Member Homepage Functions
 
-        optionTitles = { "Return Book", "Borrow Book", "Log Out", "Quit" };
-        methodReferences = { ReturnBook, BorrowBook, LogOut, QuitProgram };
+        optionTitles = { "Reserve Book", "Return Book", "Borrow Book", "Log Out", "Quit" };
+        methodReferences = { ReserveBook , ReturnBook, BorrowBook, LogOut, QuitProgram };
         break;
     }
 
@@ -176,6 +178,8 @@ void HomePage() {
 
 
     CreateMenu(currentScreen, "What do you need to do?", optionTitles, methodReferences);
+
+    HomePage();
 
 }
 
@@ -209,39 +213,318 @@ void DeleteBook() {
 
 void ReturnBook() 
 {
-    Title("Return Book");
-
-    vector<string> bookTitlesToReturn;
-    list<int> borrowedBookID;
-    list<Book> booksToReturn;
-
-
-    switch (currentUserType) {
-        case MemberUser:
-            for (BorrowedRecord br : currentLoggedInMember->GetBorrowedRecords()) borrowedBookID.push_back(br.GetBook());
-        break;
-        case AdminUser:
-            for (BorrowedRecord br : currentLoggedInAdmin->GetBorrowedRecords()) borrowedBookID.push_back(br.GetBook());
-        break;
-        case LibrarianUser:
-            for (BorrowedRecord br : currentLoggedInLibrarian->GetBorrowedRecords()) borrowedBookID.push_back(br.GetBook());
-        break;
+    
+    if (currentUserType == AdminUser && currentLoggedInAdmin->GetBorrowedRecords().size() == 0 || currentUserType == LibrarianUser && currentLoggedInLibrarian->GetBorrowedRecords().size() == 0 || currentUserType == MemberUser && currentLoggedInMember->GetBorrowedRecords().size() == 0)
+    {
+        NoCurrentBorrowedBooks error;
+        ErrorFormatting(error);
+        return;
     }
 
-    for (Book book : bookList) {
-        for (int id : borrowedBookID) if (book.GetID() == id) {
-            bookTitlesToReturn.push_back(book.GetTitle());
+    list<Book> borrowedBooks;
+    list<int> borrowedBookIDs;
+
+    if (currentUserType == AdminUser) {
+
+        for (BorrowedRecord& br : currentLoggedInAdmin->GetBorrowedRecords()) 
+        {
+            for (Book& book : bookList) if (book.GetID() == br.GetBook()) 
+            {
+                borrowedBooks.push_back(book);
+                borrowedBookIDs.push_back(book.GetID());
+            }
+        }
+    }
+    else if (currentUserType == LibrarianUser) {
+
+        for (BorrowedRecord& br : currentLoggedInLibrarian->GetBorrowedRecords())
+        {
+            for (Book& book : bookList) if (book.GetID() == br.GetBook())
+            {
+                borrowedBooks.push_back(book);
+                borrowedBookIDs.push_back(book.GetID());
+            }
+        }
+    }
+    else if (currentUserType == MemberUser) {
+
+        for (BorrowedRecord& br : currentLoggedInMember->GetBorrowedRecords())
+        {
+            for (Book& book : bookList) if (book.GetID() == br.GetBook())
+            {
+                borrowedBooks.push_back(book);
+                borrowedBookIDs.push_back(book.GetID());
+            }
         }
     }
 
-    int userChoice = TakeNumericInput(bookTitlesToReturn.size(), "What book are you returning today?", currentScreen, bookTitlesToReturn);
+    currentScreen = "Return Books";
+
+    bool foundValue = false;
+    int finalValue = 0;
+
+    do {
+        system("CLS");
+
+        Title(currentScreen);
+
+        cout << "What is the ID of the book you want to return? (Type CANCEL if you no longer want to borrow a book)" << "\n";
+
+        string userInput;
+
+        for (Book bookOption : borrowedBooks) {
+            cout << bookOption.GetID() << " - " << bookOption.GetTitle() << endl;
+        }
+
+        cout << "\nUser Choice: ";
+
+        getline(cin, userInput);
+
+        try {
+            if (userInput == "CANCEL") {
+
+                Title(currentScreen);
+
+                cout << "Exiting back to Home Screen . . .";
+
+                cin.get();
+                return;
+            }
+
+            int input = stoi(userInput);
+
+            if (find(borrowedBookIDs.begin(), borrowedBookIDs.end(), input) != borrowedBookIDs.end())
+            {
+                foundValue = true;
+                finalValue = input;
+            }
+            else
+            {
+                cout << "Please write an appropriate ID number or write CANCEL to cancel" << endl;
+                cin.get();
+            }
+        }
+        catch (invalid_argument& e) {
+
+            cout << "Be sure to write a valid, whole integer. ";
+            cin.get();
+        }
+    } while (!foundValue);
+
+    // Alter valid book
+
+    for (Book& book : bookList) {
+        if (book.GetID() == finalValue) book.SetStatus(Availible);
+    }
+    
+    list<BorrowedRecord> alteredList;
+
+    switch (currentUserType) {
+    case AdminUser:
+        for (BorrowedRecord& br : currentLoggedInAdmin->GetBorrowedRecords()) {
+            if (br.GetBook() != finalValue) {
+                alteredList.push_back(br);
+            }
+        }
+
+        currentLoggedInAdmin->SetBorrowedList(alteredList);
+    break;
+    case MemberUser:
+        for (BorrowedRecord& br : currentLoggedInMember->GetBorrowedRecords()) {
+            if (br.GetBook() != finalValue) {
+                alteredList.push_back(br);
+            }
+        }
+
+        currentLoggedInMember->SetBorrowedList(alteredList);
+        break;
+    case LibrarianUser:
+        for (BorrowedRecord& br : currentLoggedInLibrarian->GetBorrowedRecords()) {
+            if (br.GetBook() != finalValue) {
+                alteredList.push_back(br);
+            }
+        }
+
+        currentLoggedInLibrarian->SetBorrowedList(alteredList);
+        break;
+    }
+
+    SuccesfulSave();
+
+}
+
+void ReserveBook() 
+{
+    // Find all Currently Borrowed Books
+
+    // Return if No Books are Currently Borrowed
+
+    list<Book> borrowedBookList;
+    list<int> borrowedBookIDs;
+
+    // Make sure that the user can't reserve a book they already have.
+
+    list<BorrowedRecord> userBorrowedBooks;
+
+    switch (currentUserType) {
+    case LibrarianUser:
+        userBorrowedBooks = currentLoggedInLibrarian->GetBorrowedRecords();
+        break;
+    case AdminUser:
+        userBorrowedBooks = currentLoggedInAdmin->GetBorrowedRecords();
+        break;
+    case MemberUser:
+        userBorrowedBooks = currentLoggedInMember->GetBorrowedRecords();
+        break;
+    }
+
+    for (Book& book : bookList) {
+        if (book.GetStatus() == Borrowed) {
+            bool notUserBorrowed = true;
+
+            for (BorrowedRecord br : userBorrowedBooks) {
+                if (book.GetID() == br.GetBook()) {
+                    notUserBorrowed = false;
+                    break; 
+                }
+            }
+
+            if (notUserBorrowed) {
+                borrowedBookIDs.push_back(book.GetID());
+                borrowedBookList.push_back(book);
+            }
+        }
+    }
+
+    if (borrowedBookList.size() == 0) {
+        NoReserveReadyBooks error;
+        ErrorFormatting(error);
+        return;
+    }
+
+    // Display List of Books to User & Prompt for Input
+
+    bool foundValue = false;
+    int finalValue = 0;
+
+    do {
+        system("CLS");
+
+        Title(currentScreen);
+
+        cout << "What is the ID of the book you want to reserve? (Type CANCEL if you no longer want to borrow a book)" << "\n";
+
+        string userInput;
+
+        for (Book book : borrowedBookList) {
+            cout << book.GetID() << " - " << book.GetTitle() << endl;
+        }
+
+        cout << "\nUser Choice: ";
+
+        getline(cin, userInput);
+
+        try {
+            if (userInput == "CANCEL") {
+
+                Title(currentScreen);
+
+                cout << "Exiting back to Home Screen . . .";
+
+                cin.get();
+                return;
+            }
+
+            int input = stoi(userInput);
+
+            if (find(borrowedBookIDs.begin(), borrowedBookIDs.end(), input) != borrowedBookIDs.end())
+            {
+                foundValue = true;
+                finalValue = input;
+            }
+            else
+            {
+                cout << "Please write an appropriate ID number or write CANCEL to cancel" << endl;
+                cin.get();
+            }
+        }
+        catch (invalid_argument& e) {
+
+            cout << "Be sure to write a valid, whole integer. ";
+            cin.get();
+        }
+    } while (!foundValue);
+
+    for (Book& book : bookList) {
+        if (book.GetID() == finalValue) book.SetStatus(Reserved);
+    }
+
+    // Find maximum borrowed Records by checking all availible records in all kinds of member
+
+    list<BorrowedRecord> allBorrowedRecords;
+    int maximumRecordID = 0;
+
+    for (MemberC& member : memberList) {
+        auto records = member.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (LibrarianC& librarian : librarianList) {
+        auto records = librarian.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (AdminC& admin : adminList) {
+        auto records = admin.GetBorrowedRecords();
+        allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
+    }
+
+    for (BorrowedRecord& br : allBorrowedRecords) {
+        if (br.GetRecordID() >= maximumRecordID) maximumRecordID = br.GetRecordID();
+    }
+
+
+    list<ReservedRecord> newReservedList;
+
+    ReservedRecord rr = ReservedRecord();
+
+    rr.SetRecordID(maximumRecordID + 1);
+    rr.SetDateCreated(std::chrono::system_clock::now());
+    rr.SetConfirmation(false);
+    rr.SetBook(finalValue);
+
+    switch (currentUserType) {
+    case MemberUser:
+        newReservedList = currentLoggedInMember->GetReservedRecordsList();
+        newReservedList.push_back(rr);
+
+        currentLoggedInMember->SetReservedList(newReservedList);
+        break;
+    case AdminUser:
+        newReservedList = currentLoggedInAdmin->GetReservedRecordsList();
+        newReservedList.push_back(rr);
+
+        currentLoggedInAdmin->SetReservedList(newReservedList);
+        break;
+    case LibrarianUser:
+        newReservedList = currentLoggedInLibrarian->GetReservedRecordsList();
+        newReservedList.push_back(rr);
+
+        currentLoggedInLibrarian->SetReservedList(newReservedList);
+        break;
+    }
+
+    currentScreen = "Book Reserve - Save Status";
+
+    SuccesfulSave();
+
 }
 
 void BorrowBook()
 {
     vector<string> booksToBorrow;
     vector<int> bookIDs;
-
+    
     for (Book& book : bookList) {
         if (book.GetStatus() == Availible) {
             booksToBorrow.push_back(book.GetTitle());
@@ -290,8 +573,6 @@ void BorrowBook()
                 cout << "Exiting back to Home Screen . . .";
 
                 cin.get();
-
-                HomePage();
                 return;
             }
 
@@ -315,26 +596,27 @@ void BorrowBook()
         }
     } while (!foundValue);
 
+    bool foundBook = false;
+
     for (Book& book : bookList) {
         if (book.GetID() == finalValue) {
             book.SetStatus(Borrowed);
+            foundBook = true;
             break;
         }
-        else 
-        {
-            BookNotFound error;
-            ErrorFormatting(error);
-            return;
-        }
+    }
+
+    if (!foundBook) {
+        BookNotFound error;
+        ErrorFormatting(error);
+        return;
     }
 
     // Find maximum borrowed Records by checking all availible records in all kinds of member
 
     list<BorrowedRecord> allBorrowedRecords;
     int maximumRecordID = 0;
-
-     
-
+    
     for (MemberC& member : memberList) {
         auto records = member.GetBorrowedRecords();
         allBorrowedRecords.insert(allBorrowedRecords.end(), records.begin(), records.end());
@@ -387,15 +669,27 @@ void BorrowBook()
         break;
     }
     
+    currentScreen = "Book Borrow - Save Status";
     
-    if (SaveBookList(bookList)) cout << "\n\nBook Records Save Succesful";
-    if (SaveUsersList( memberList, librarianList, adminList )) cout << "\n\nUser Records Save Succesful";
+    SuccesfulSave();
+}
+
+void SuccesfulSave() {
+
+    Title(currentScreen);
+
+    if (SaveBookList(bookList) && SaveUsersList(memberList, librarianList, adminList))
+    {
+        ChangeColourText(32, "==============\n\n");
+
+        ChangeColourText(32, "Save Succesful!\n");
+
+        ChangeColourText(32, "Returning to Home Page\n\n");
+
+        ChangeColourText(32, "==============\n");
+    }
 
     cin.get();
-
-    HomePage();
-        
-    
 }
 
 void QuitProgram() {

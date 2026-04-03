@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:CustomErrors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:DataManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Users.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Users.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -23,20 +11,47 @@
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Books.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:COM5012 Object Oriented - CW1 Smart Library Management.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:CustomErrors.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\list||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:DataManagement.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomEnums.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:CustomEnums.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\HelperMethods.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:HelperMethods.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:BorrowedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Settings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Admin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -45,18 +60,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Librarian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Librarian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:ReservedRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomEnums.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:CustomEnums.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|solutionrelative:Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97D339AA-6E44-462D-BB45-7353344B9836}|COM5012 Object Oriented - CW1 Smart Library Management.vcxproj|C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -83,108 +86,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataManagement.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h",
-              "RelativeDocumentMoniker": "DataManagement.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h",
-              "RelativeToolTip": "DataManagement.h",
-              "ViewState": "AgIAAFIBAAAAAAAAAAAAwIgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-03T01:52:24.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomErrors.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h",
-              "RelativeDocumentMoniker": "CustomErrors.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h",
-              "RelativeToolTip": "CustomErrors.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAwwB4AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-30T01:57:54.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BorrowedRecord.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
-              "RelativeDocumentMoniker": "BorrowedRecord.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
-              "RelativeToolTip": "BorrowedRecord.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Settings.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h",
-              "RelativeDocumentMoniker": "Settings.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h",
-              "RelativeToolTip": "Settings.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Book.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h",
-              "RelativeDocumentMoniker": "Book.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h",
-              "RelativeToolTip": "Book.h",
-              "ViewState": "AgIAAAoAAAAAAAAAAADgvxkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Books.txt",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Books.txt",
               "RelativeDocumentMoniker": "Books.txt",
               "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Books.txt",
               "RelativeToolTip": "Books.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2026-04-02T19:58:11.007Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Users.txt",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Users.txt",
               "RelativeDocumentMoniker": "Users.txt",
               "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Users.txt",
               "RelativeToolTip": "Users.txt",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2026-03-17T22:49:29.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "RelativeDocumentMoniker": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\COM5012 Object Oriented - CW1 Smart Library Management.cpp",
               "RelativeToolTip": "COM5012 Object Oriented - CW1 Smart Library Management.cpp",
-              "ViewState": "AgIAAPYAAAAAAAAAAAAwwAEBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUCAAAAUKdZoN3lv9kBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-17T22:49:29.401Z",
               "EditorCaption": ""
@@ -192,58 +130,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Admin.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Admin.h",
-              "RelativeDocumentMoniker": "Admin.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Admin.h",
-              "RelativeToolTip": "Admin.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Librarian.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Librarian.h",
-              "RelativeDocumentMoniker": "Librarian.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Librarian.h",
-              "RelativeToolTip": "Librarian.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:51:08.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "HelperMethods.h",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\HelperMethods.h",
               "RelativeDocumentMoniker": "HelperMethods.h",
               "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\HelperMethods.h",
               "RelativeToolTip": "HelperMethods.h",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAWwFIAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAgwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T23:14:14.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T23:14:14.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ReservedRecord.h",
-              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h",
-              "RelativeDocumentMoniker": "ReservedRecord.h",
-              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h",
-              "RelativeToolTip": "ReservedRecord.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "CustomEnums.h",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomEnums.h",
               "RelativeDocumentMoniker": "CustomEnums.h",
@@ -251,12 +149,35 @@
               "RelativeToolTip": "CustomEnums.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-01T22:43:39.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-01T22:43:39.706Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
+              "Title": "CustomErrors.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h",
+              "RelativeDocumentMoniker": "CustomErrors.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\CustomErrors.h",
+              "RelativeToolTip": "CustomErrors.h",
+              "ViewState": "AgIAABkAAAAAAAAAAAAwwCwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-30T01:57:54.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservedRecord.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h",
+              "RelativeDocumentMoniker": "ReservedRecord.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\ReservedRecord.h",
+              "RelativeToolTip": "ReservedRecord.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:49:29.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Record.h",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Record.h",
               "RelativeDocumentMoniker": "Record.h",
@@ -264,12 +185,95 @@
               "RelativeToolTip": "Record.h",
               "ViewState": "AgIAAAUAAAAAAAAAAAAuwBMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T22:49:29.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Book.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h",
+              "RelativeDocumentMoniker": "Book.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Book.h",
+              "RelativeToolTip": "Book.h",
+              "ViewState": "AgIAAAoAAAAAAAAAAADgvxkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:49:29.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "list",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\list",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\list",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\list",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\include\\list",
+              "ViewState": "AgIAAGUDAAAAAAAAAAApwHMDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-03T02:40:09.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DataManagement.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h",
+              "RelativeDocumentMoniker": "DataManagement.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\DataManagement.h",
+              "RelativeToolTip": "DataManagement.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-03T01:52:24.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Settings.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h",
+              "RelativeDocumentMoniker": "Settings.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Settings.h",
+              "RelativeToolTip": "Settings.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:49:29.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BorrowedRecord.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
+              "RelativeDocumentMoniker": "BorrowedRecord.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\BorrowedRecord.h",
+              "RelativeToolTip": "BorrowedRecord.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:49:29.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Admin.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Admin.h",
+              "RelativeDocumentMoniker": "Admin.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Admin.h",
+              "RelativeToolTip": "Admin.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:49:29.326Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "Librarian.h",
+              "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Librarian.h",
+              "RelativeDocumentMoniker": "Librarian.h",
+              "ToolTip": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Librarian.h",
+              "RelativeToolTip": "Librarian.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-17T22:51:08.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Member.h",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Member.h",
               "RelativeDocumentMoniker": "Member.h",
@@ -277,12 +281,11 @@
               "RelativeToolTip": "Member.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T22:49:29.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T22:49:29.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "string",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
@@ -294,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Roles.h",
               "DocumentMoniker": "C:\\Users\\leonc\\OneDrive\\Documents\\CW1-Smart-Library-Management-System-SLMS\\COM5012 Object Oriented - CW1 Smart Library Management\\Roles.h",
               "RelativeDocumentMoniker": "Roles.h",
@@ -306,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "optional",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\optional",
@@ -318,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "list",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\list",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\list",
